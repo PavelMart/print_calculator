@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="calc">
+            <div class="calc__column">
+                <div class="calc__title title">
+                    <p class="title__text">Расчет стоимости</p>
+                </div>
+                <div class="calc__body">
+                    <ul class="calc__col">
+                        <li class="calc__row item format">
+                            <div class="item__col item__title">Размер изделия (Формат)</div>
+                            <div class="item__col item__body">
+                                <select
+                                    class="item__input item__input_select"
+                                    id="format__select"
+                                    name="format__select"
+                                ></select>
+                            </div>
+                        </li>
+                        <li class="calc__row item edition">
+                            <div class="item__col item__title">Количество<br />(тираж)</div>
+                            <div class="item__col item__body">
+                                <input
+                                    class="item__input item__input_number"
+                                    type="number"
+                                    min="5"
+                                    value="5"
+                                    id="edition__value"
+                                />
+                                <span>экземпляров</span>
+                            </div>
+                        </li>
+                        <li class="calc__row item paper">
+                            <div class="item__col item__title">Вид бумаги (плотность)</div>
+                            <div class="item__col item__body">
+                                <select
+                                    class="item__input item__input_select"
+                                    id="paper__select"
+                                    name="paper__select"
+                                ></select>
+                            </div>
+                        </li>
+                        <li class="calc__row item printing-type">
+                            <div class="item__col item__title">Тип печати</div>
+                            <div class="item__col item__body item__two_lines">
+                                <input
+                                    class="item__input_radio"
+                                    type="radio"
+                                    name="printing-type"
+                                    id="printing-type_1"
+                                    value="1"
+                                    checked
+                                />
+                                <label
+                                    class="item__input item__input_radio_button mr20 item__input_line"
+                                    for="printing-type_1"
+                                    >Одна сторона</label
+                                >
+                                <input
+                                    class="item__input_radio"
+                                    type="radio"
+                                    name="printing-type"
+                                    id="printing-type_2"
+                                    value="2"
+                                />
+                                <label
+                                    class="item__input item__input_radio_button item__input_line"
+                                    for="printing-type_2"
+                                    >Две стороны</label
+                                >
+                            </div>
+                        </li>
+                        <li class="calc__row item lamination">
+                            <div class="item__col item__title">Ламинация</div>
+                            <div class="item__col item__body item__two_lines">
+                                <select
+                                    class="item__input item__input_select mr20 item__input_line"
+                                    id="lamination__select"
+                                    name="lamination__select"
+                                ></select>
+                                <select
+                                    class="item__input item__input_select item__input_line"
+                                    id="lamination__count"
+                                    name="lamination__count"
+                                >
+                                    <option value="1">Одна сторона</option>
+                                    <option value="2">Две стороны</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="calc__row item folding">
+                            <div class="item__col item__title">Сгибы (фальцовка)</div>
+                            <div class="item__col item__body">
+                                <select
+                                    class="item__input item__input_select item__input_small"
+                                    id="folding__select"
+                                    name="folding__select"
+                                >
+                                    <option value="0" selected="selected">Нет</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="calc__row item rounding">
+                            <div class="item__col item__title">Скругление углов:</div>
+                            <div class="item__col item__body">
+                                <select
+                                    class="item__input item__input_select item__input_small"
+                                    id="rounding__select"
+                                    name="rounding__select"
+                                >
+                                    <option value="0">Нет</option>
+                                    <option value="1">Да</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="calc__row item perforation">
+                            <div class="item__col item__title">Перфорация:</div>
+                            <div class="item__col item__body">
+                                <select
+                                    class="item__input item__input_select item__input_small"
+                                    id="perforation__select"
+                                    name="perforation__select"
+                                >
+                                    <option value="0">Нет</option>
+                                    <option value="1">Да</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="calc__row item curly-cutting">
+                            <div class="item__col item__title">Фигурная резка</div>
+                            <div class="item__col item__body item__two_lines">
+                                <input
+                                    class="item__input_radio"
+                                    type="radio"
+                                    name="curly-cutting"
+                                    id="curly-cutting_1"
+                                    value="1"
+                                />
+                                <label
+                                    class="item__input item__input_radio_button mr20 item__input_line"
+                                    for="curly-cutting_1"
+                                    >Плоттерная</label
+                                >
+                                <input
+                                    class="item__input_radio"
+                                    type="radio"
+                                    name="curly-cutting"
+                                    id="curly-cutting_2"
+                                    value="2"
+                                />
+                                <label
+                                    class="item__input item__input_radio_button item__input_line"
+                                    for="curly-cutting_2"
+                                    >Лазерная</label
+                                >
+                            </div>
+                        </li>
+                        <li class="calc__row item glue-point">
+                            <div class="item__col item__title">Клеевая точка:</div>
+                            <div class="item__col item__body">
+                                <select
+                                    class="item__input item__input_select item__input_small"
+                                    id="glue-point__select"
+                                    name="glue-point__select"
+                                >
+                                    <option value="0">Нет</option>
+                                    <option value="1">Да</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="calc__row item personalization">
+                            <div class="item__col item__title">Точка персонализации:</div>
+                            <div class="item__col item__body">
+                                <select
+                                    class="item__input item__input_select item__input_small"
+                                    id="personalization__select"
+                                    name="personalization__select"
+                                >
+                                    <option value="0">Нет</option>
+                                    <option value="1">Да</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="calc__row item calculate__container">
+                            <div class="item__col item__title calculate">
+                                <button class="item__input item__input_button" id="calculate" class="btn btn__active">
+                                    РАССЧИТАТЬ
+                                </button>
+                            </div>
+                            <div class="item__col item__body result">
+                                <div class="result__column">
+                                    <p class="result__title">ИТОГО:</p>
+                                    <span class="item__input item__input_small result__price" id="price"></span>
+                                    <p class="result__currency">руб.</p>
+                                </div>
+                                <div class="result__column">
+                                    <p class="result__title result__title_small">Цена за<br />единицу:</p>
+                                    <span
+                                        class="item__input item__input_small result__price result__price_one"
+                                        id="price__one"
+                                    ></span>
+                                    <p class="result__currency">руб.</p>
+                                </div>
+                            </div>
+                            <div class="item__col calculate">
+                                <button class="item__input item__input_button" id="reset">ОЧИСТИТЬ</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="calc__column">
+                <div class="calc__title title">
+                    <p class="title__text">Результаты</p>
+                </div>
+                <div class="calc__body">
+                    <ul class="calc__col border-none mb30">
+                        <li class="calc__row calc__row_result" id="format-result">
+                            <p>Формат:</p>
+                            <p id="result"></p>
+                        </li>
+                        <li class="calc__row calc__row_result" id="edition-result">
+                            <p>Тираж:</p>
+                            <p id="result"></p>
+                        </li>
+                        <li class="calc__row calc__row_result" id="paper-result">
+                            <p>Вид бумаги:</p>
+                            <p id="result"></p>
+                        </li>
+                        <li class="calc__row calc__row_result" id="printing-type-result">
+                            <p>Тип печати:</p>
+                            <p id="result"></p>
+                        </li>
+                        <li class="calc__row calc__row_result" id="lamination-result">
+                            <p>Ламинация:</p>
+                            <p id="result"></p>
+                        </li>
+                        <li class="calc__row calc__row_result" id="folding-result">
+                            <p>Сгибы:</p>
+                            <p id="result"></p>
+                        </li>
+                        <li class="calc__row calc__row_result" id="rounding-result">
+                            <p>Скругление:</p>
+                            <p id="result"></p>
+                        </li>
+                        <li class="calc__row calc__row_result" id="perforation-result">
+                            <p>Перфорация:</p>
+                            <p id="result"></p>
+                        </li>
+                        <li class="calc__row calc__row_result" id="curly-cutting-result">
+                            <p>Фигурная резка:</p>
+                            <p id="result"></p>
+                        </li>
+                        <li class="calc__row calc__row_result" id="glue-point-result">
+                            <p>Клеевая точка:</p>
+                            <p id="result"></p>
+                        </li>
+                        <li class="calc__row calc__row_result" id="personalization-result">
+                            <p>Персонализация:</p>
+                            <p id="result"></p>
+                        </li>
+                    </ul>
+                    <ul class="calc__col border-none">
+                        <li class="calc__row calc__row_result main-result" id="main-result">
+                            <p>Cумма:</p>
+                            <p id="result"></p>
+                        </li>
+                        <li class="calc__row calc__row_result main-result" id="main-one-result">
+                            <p>Цена 1 экз.:</p>
+                            <p id="result"></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="calc__buttons">
+                    <button class="item__input item__input_button item__input_button_result" id="quick-order">
+                        БЫСТРЫЙ ЗАКАЗ
+                    </button>
+                    <button class="item__input item__input_button item__input_button_result" id="add-to-cart">
+                        В КОРЗИНУ
+                    </button>
+                    <button class="item__input item__input_button item__input_button_result" id="order-form">
+                        БЛАНК ЗАКАЗА
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="configuration.js" defer></script>
+        <script src="script.js" defer></script>
+    </body>
+</html>
